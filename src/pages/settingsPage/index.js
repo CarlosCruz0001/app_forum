@@ -2,6 +2,8 @@ import { View, Text, TextInput, TouchableOpacity } from 'react-native';
 import { styles } from './style';
 
 export default function SettingsPage() {
+
+
   return (
     <View style={styles.container}>
       <View>
@@ -13,7 +15,7 @@ export default function SettingsPage() {
            placeholder="Digite a letra do seu perfil"
            style={styles.inputLetra}
         />
-        <TouchableOpacity style={styles.botaoPublicar}>
+        <TouchableOpacity style={styles.botaoPublicar} >
           <Text style={styles.textoBotao}>Alterar</Text>
         </TouchableOpacity>
 
