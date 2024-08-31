@@ -5,14 +5,19 @@ import { MaterialIcons, FontAwesome } from "@expo/vector-icons";
 // importação das telas
 import ChatPage from "./src/pages/chatPage/index";
 import ForumPage from "./src/pages/ForumPage/index";
-import ProfilePage from "./src/pages/ProfilePage/index";
 import SettingsPage from './src/pages/settingsPage/index'
+import { useState } from "react";
+import ProfileWrapper from "./src/pages/profileWrapper";
+
 
 const Tab = createBottomTabNavigator();
 
 
 
 export default function App() {
+  const [letterPerfil, setLetterPerfil]= useState({profile:'', text:''});
+  console.log(letterPerfil);
+  
   return (
     <NavigationContainer>
       <Tab.Navigator
@@ -37,14 +42,14 @@ export default function App() {
         />
         <Tab.Screen
           name="Profile"
-          component={ProfilePage}
+          children={() => <ProfileWrapper letterPerfil={letterPerfil} />}
           options={{
             tabBarIcon: ({ size, color }) => (
-              <FontAwesome name="user" size={size} color={color} />
+              <MaterialIcons name="settings" size={size} color={color} />
             ),
           }}
         />
-         <Tab.Screen
+        <Tab.Screen
           name="Chat"
           component={ChatPage}
           options={{
@@ -55,7 +60,7 @@ export default function App() {
         />
         <Tab.Screen
           name="Settings"
-          component={SettingsPage}
+          children={() => <SettingsPage setLetterPerfil={setLetterPerfil} />}
           options={{
             tabBarIcon: ({ size, color }) => (
               <MaterialIcons name="settings" size={size} color={color} />

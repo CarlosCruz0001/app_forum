@@ -2,10 +2,13 @@ import { View, Text } from "react-native";
 import { styles } from "./style";
 import ProfileLetter from "../../components/ProfileComponent";
 
-export default function ProfilePage() {
+export default function ProfilePage({letterProfile}) {
+
+  console.log('texto',letterProfile);
+  
   return (
     <View style={styles.container}>
-      <ProfileLetter letterName="C" />
+      <ProfileLetter letterName={letterProfile.profile} />
 
       <View>
         <Text style={styles.info}>Sobre mim</Text>
@@ -13,8 +16,7 @@ export default function ProfilePage() {
 
       <View>
         <Text style={styles.bio}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacus
-          metus, dictum et efficitur quis, accumsan sed lorem. Nullam dignissim.
+          {letterProfile.text}
         </Text>
       </View>
     </View>
