@@ -10,7 +10,7 @@ export default function ProfilePage({letterProfile}) {
     <View style={styles.container}>
       <ProfileLetter letterName={letterProfile.profile} />
 
-      <View>
+      <View >
         <Text style={styles.info}>Sobre mim</Text>
       </View>
 

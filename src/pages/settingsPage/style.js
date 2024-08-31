@@ -6,7 +6,7 @@ export const styles = StyleSheet.create({
     flex: 1,
     padding: 8,
     alignItems: "center",
-    backgroundColor: "#fff",
+    backgroundColor: "#fef5c8",
   },
   title: {
     fontSize: 24,
@@ -32,7 +32,7 @@ export const styles = StyleSheet.create({
   },
   botaoPublicar: {
     borderRadius: 30,
-    backgroundColor: "#aaa",
+    backgroundColor: "#013750",
     width: 100,
     height: 60,
     margin: 10,
@@ -41,7 +41,7 @@ export const styles = StyleSheet.create({
   },
 
   textoBotao:{
-    color: '#ccc',
+    color: '#f23e02',
     fontSize:20,
     marginTop:13,
     marginBottom:13,

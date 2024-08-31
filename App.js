@@ -24,10 +24,10 @@ export default function App() {
         initialRouteName="Home"
         screenOptions={{
           headerShown: false,
-          tabBarInactiveBackgroundColor: "#E4CEF2",
-          tabBarActiveBackgroundColor: "#9E68CA",
+          tabBarInactiveBackgroundColor: "#013750",
+          tabBarActiveBackgroundColor: "#2c6b74",
           tabBarActiveTintColor: "#FFF",
-          tabBarInactiveTintColor: "#7942B9",
+          tabBarInactiveTintColor: "#fef5c8",
           tabBarShowLabel: false,
         }}
       >
@@ -45,7 +45,7 @@ export default function App() {
           children={() => <ProfileWrapper letterPerfil={letterPerfil} />}
           options={{
             tabBarIcon: ({ size, color }) => (
-              <MaterialIcons name="settings" size={size} color={color} />
+              <FontAwesome name="user" size={size} color={color} />
             ),
           }}
         />

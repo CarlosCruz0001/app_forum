@@ -3,10 +3,9 @@ import {StyleSheet} from 'react-native'
 export const styles = StyleSheet.create({
   container: {
     marginTop: 40,
-    marginBottom: 5,
-    marginLeft: 5,
-    marginRight: 5,
+    paddingHorizontal: 3,
     flex: 1,
+    backgroundColor: '#fef5c8',
   },
   post: {
     padding: 10,
