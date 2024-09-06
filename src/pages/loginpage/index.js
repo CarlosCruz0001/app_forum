@@ -1,32 +1,58 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   View,
   Text,
-  Image,
-  TouchableOpacity,
   TextInput,
-  TouchableWithoutFeedback,
-  Keyboard,
+  TouchableOpacity,
+  Alert,
 } from "react-native";
-import { useState } from "react";
 import { styles } from "./style";
-
+import { useSQLiteContext } from "expo-sqlite";
 
 export default function LoginPage({ navigation }) {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const handleLogin = () => {
-    if (email === '' || password === '') {
-      console.log('Erro', 'Por favor, preencha todos os campos.');
-    } else {
-      navigation.navigate("app")
+  const db = useSQLiteContext(); 
+
+  const loginUser = async (email, password) => {
+    try {
+      
+      const todosRegistros = await db.getAllAsync('SELECT * FROM usuario');
+
+      
+      const usuarioEncontrado = todosRegistros.find(usuario => usuario.email === email && usuario.password === password);
+
+      if (usuarioEncontrado) {
+       
+        const usuarioArray = [usuarioEncontrado];
+        const letraPerfil = usuarioEncontrado.letter || ''; 
+
+        console.log(usuarioArray);
+        console.log('Letra do perfil:', letraPerfil);
+
+        
+        navigation.navigate("app", { usuario: usuarioArray, letraPerfil: letraPerfil });
+      } else {
+        Alert.alert("Erro", "Email ou senha incorretos");
+      }
+    } catch (error) {
+      console.error("Erro ao consultar o banco de dados", error);
+      Alert.alert("Erro", "Ocorreu um erro ao tentar realizar o login.");
     }
   };
 
-  return(
-  <View style={styles.container}>
-    <Text style={styles.title}>Login</Text>
+  const handleLogin = () => {
+    if (email === "" || password === "") {
+      Alert.alert("Atenção", "Por favor, preencha todos os campos."); 
+    } else {
+      loginUser(email, password); 
+    }
+  };
+
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>Login</Text>
 
       <TextInput
         style={styles.input}
@@ -48,6 +74,9 @@ export default function LoginPage({ navigation }) {
         <Text style={styles.buttonText}>Entrar</Text>
       </TouchableOpacity>
 
-  </View>
-  )
+      <TouchableOpacity onPress={() => navigation.navigate("createUserPage")}>
+          <Text style={styles.CreateUserPage}>Criar Usuário</Text>
+        </TouchableOpacity>
+    </View>
+  );
 }

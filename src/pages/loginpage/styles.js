@@ -34,4 +34,8 @@ export const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: 'bold',
       },
+      CreateUserPage:{
+        marginTop:28,
+        color:'white'
+      }
 });

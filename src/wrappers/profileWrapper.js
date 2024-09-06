@@ -1,6 +1,5 @@
-// ProfileWrapper.js
 import React from "react";
-import ProfilePage from "../ProfilePage/index";
+import ProfilePage from "../pages/ProfilePage/index";
 
 export default function ProfileWrapper({ letterPerfil }) {
   return <ProfilePage letterProfile={letterPerfil} />;

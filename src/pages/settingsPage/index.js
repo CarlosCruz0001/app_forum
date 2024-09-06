@@ -1,20 +1,20 @@
+import React, { useState } from "react";
 import { View, Text, TextInput, TouchableOpacity } from "react-native";
 import { styles } from "./style";
-import { useState } from "react";
 
-export default function SettingsPage({ setLetterPerfil }) {
+export default function SettingsPage({ setLetterPerfil, navigation }) {
   const [valueInput, setValueInput] = useState({ profile: "", text: "" });
 
-  // Função para atualizar a letra do perfil
+  
   const updateProfileLetter = (profile) => {
     setValueInput((prevState) => ({ ...prevState, profile: profile }));
   };
 
-  // Função para atualizar a biografia
+
   const updateBio = (text) => {
     setValueInput((prevState) => ({ ...prevState, text: text }));
   };
- 
+
   return (
     <View style={styles.container}>
       <View>
@@ -27,6 +27,7 @@ export default function SettingsPage({ setLetterPerfil }) {
           style={styles.inputLetra}
           onChangeText={updateProfileLetter}
           inputMode="string"
+          value={valueInput.profile}
         />
         <TouchableOpacity
           style={styles.botaoPublicar}
@@ -46,12 +47,17 @@ export default function SettingsPage({ setLetterPerfil }) {
           placeholder="Digite sua biografia"
           style={styles.inputBio}
           onChangeText={updateBio}
+          value={valueInput.text}
         />
         <TouchableOpacity
           style={styles.botaoPublicar}
           onPress={() => setLetterPerfil((prevState) => ({ ...prevState, text: valueInput.text }))}
         >
           <Text style={styles.textoBotao}>Alterar</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.botaoPublicar} onPress={() => navigation.navigate('login')}>
+          <Text style={styles.textoBotao}>Sair</Text>
         </TouchableOpacity>
       </View>
     </View>

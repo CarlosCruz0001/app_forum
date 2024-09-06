@@ -9,7 +9,7 @@ export default function ForumScreen() {
   const handlePublish = () => {
     if (message.trim()) {
       setPosts([...posts, message]);
-      setMessage(''); // Limpar a mensagem após a publicação
+      setMessage(''); 
     }
   };
 

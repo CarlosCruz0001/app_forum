@@ -25,7 +25,7 @@ export const styles = StyleSheet.create({
   },
   inputBio: {
     borderWidth: 1,
-    height: 300,
+    height: 250,
     width: 290,
     borderRadius: 30,
     paddingLeft: 15,

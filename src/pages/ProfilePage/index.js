@@ -3,8 +3,6 @@ import { styles } from "./style";
 import ProfileLetter from "../../components/ProfileComponent";
 
 export default function ProfilePage({letterProfile}) {
-
-  console.log('texto',letterProfile);
   
   return (
     <View style={styles.container}>
