@@ -3,9 +3,8 @@ import {} from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import App from "../pages/appPage";
 import CreateUserPage from "../pages/createUserPage";
-import HomePage from "../pages/homePage/index";
+import HomePage from "../pages/homePage";
 import LoginPage from "../pages/loginpage";
-
 
 const Stack = createStackNavigator();
 
@@ -16,14 +15,18 @@ export default function Routes() {
         name="homePage"
         component={HomePage}
         options={{
-          headerShown: false,
+          title: "",
+          headerTintColor: "#FFF",
+          headerTransparent: true,
         }}
       />
       <Stack.Screen
         name="login"
         component={LoginPage}
         options={{
-          headerShown: false,
+          title: "",
+          headerTintColor: "#FFF",
+          headerTransparent: true,
         }}
       />
       <Stack.Screen

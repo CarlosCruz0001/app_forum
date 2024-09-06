@@ -2,7 +2,7 @@ import { Button, StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   container: {
-    marginTop: 40,
+    paddingTop: 40,
     flex: 1,
     padding: 8,
     alignItems: "center",
@@ -36,14 +36,14 @@ export const styles = StyleSheet.create({
     width: 100,
     height: 60,
     margin: 10,
-    alignSelf: 'center',
-    alignItems:'center',
+    alignSelf: "center",
+    alignItems: "center",
   },
 
-  textoBotao:{
-    color: '#f23e02',
-    fontSize:20,
-    marginTop:13,
-    marginBottom:13,
-  }
+  textoBotao: {
+    color: "#f23e02",
+    fontSize: 20,
+    marginTop: 13,
+    marginBottom: 13,
+  },
 });
