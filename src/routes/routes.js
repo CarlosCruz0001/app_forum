@@ -3,7 +3,7 @@ import {} from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import App from "../pages/appPage";
 import CreateUserPage from "../pages/createUserPage";
-import LoginPage from "../pages/loginpage";
+import Loginpage from "../pages/loginPage";
 
 
 const Stack = createStackNavigator();
@@ -13,7 +13,7 @@ export default function Routes() {
     <Stack.Navigator>
       <Stack.Screen
         name="login"
-        component={LoginPage}
+        component={Loginpage}
         options={{
           title: "",
           headerTintColor: "#FFF",

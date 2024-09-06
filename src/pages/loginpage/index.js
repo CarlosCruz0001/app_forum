@@ -6,10 +6,10 @@ import {
   TouchableOpacity,
   Alert,
 } from "react-native";
-import { styles } from "./style";
+import { styles } from "./styles";
 import { useSQLiteContext } from "expo-sqlite";
 
-export default function LoginPage({ navigation }) {
+export default function Loginpage({ navigation }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
